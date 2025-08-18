@@ -1,7 +1,9 @@
+import Timer from '@/components/timer'
+
 export default function Page() {
   return (
     <div>
-      <p>Pomodoro timer</p>
+      <Timer time={5} />
     </div>
   )
 }
