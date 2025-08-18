@@ -54,10 +54,10 @@ export default function Timer({ time }: TimerProps) {
   })()
 
   const startButtonIcon = (() => {
-    if (isRunning) return <Pause className='mr-2 h-4 w-4' />
-    if (timeRemaining === 0) return <RotateCcw className='mr-2 h-4 w-4' />
-    if (timeRemaining === time) return <Play className='mr-2 h-4 w-4' />
-    return <PlayCircle className='mr-2 h-4 w-4' />
+    if (isRunning) return <Pause />
+    if (timeRemaining === 0) return <RotateCcw />
+    if (timeRemaining === time) return <Play />
+    return <PlayCircle />
   })()
 
   const handleStartClick = () => {
@@ -75,10 +75,10 @@ export default function Timer({ time }: TimerProps) {
   }
 
   return (
-    <div>
-      <h1>{formattedTime}</h1>
+    <div className='flex flex-col items-center justify-center p-6 rounded-2xl shadow-md'>
+      <h1 className='text-6xl font-bold tracking-wide mb-6'>{formattedTime}</h1>
 
-      <section>
+      <section className='flex gap-4'>
         <Button onClick={handleStartClick}>
           {startButtonIcon}
           {startButtonLabel}
@@ -89,7 +89,7 @@ export default function Timer({ time }: TimerProps) {
           disabled={timeRemaining === time}
           variant='secondary'
         >
-          <Square className='mr-2 h-4 w-4' />
+          <Square />
           Reset
         </Button>
       </section>
