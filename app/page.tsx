@@ -1,9 +1,68 @@
 import Timer from '@/components/timer'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { ModeToggle } from '@/components/mode-toggle'
+import { Settings } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export default function Page() {
   return (
-    <div>
-      <Timer time={5} />
-    </div>
+    <main className='flex flex-col min-h-screen items-center justify-center'>
+      <div className='p-4 rounded-2xl shadow-lg dark:shadow-[0_0_15px_rgba(255,255,255,0.1)]'>
+        <Tabs defaultValue='pomodoro' className='w-full'>
+          <TabsList className='grid grid-cols-3 w-full'>
+            <TabsTrigger value='pomodoro' className='cursor-pointer'>
+              Pomodoro
+            </TabsTrigger>
+            <TabsTrigger value='shortbreak' className='cursor-pointer'>
+              Short Break
+            </TabsTrigger>
+            <TabsTrigger value='longbreak' className='cursor-pointer'>
+              Long Break
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value='pomodoro'>
+            <Timer time={25 * 60} />
+          </TabsContent>
+          <TabsContent value='shortbreak'>
+            <Timer time={5 * 60} />
+          </TabsContent>
+          <TabsContent value='longbreak'>
+            <Timer time={20 * 60} />
+          </TabsContent>
+        </Tabs>
+      </div>
+
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant={'outline'} className='mt-4' title='settings'>
+            <Settings />
+          </Button>
+        </DialogTrigger>
+        <DialogContent className='sm:max-w-md rounded-2xl p-6 shadow-xl'>
+          <DialogHeader>
+            <DialogTitle className='text-xl font-semibold'>
+              Settings
+            </DialogTitle>
+            <DialogDescription className='text-sm text-muted-foreground'>
+              Customize your Pomodoro experience.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className='flex items-center gap-4 mt-4'>
+            Theme
+            <ModeToggle />
+          </div>
+        </DialogContent>
+      </Dialog>
+    </main>
   )
 }
