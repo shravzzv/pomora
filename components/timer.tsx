@@ -75,11 +75,11 @@ export default function Timer({ time }: TimerProps) {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center p-6 rounded-2xl shadow-md'>
+    <div className='flex flex-col items-center justify-center p-6 rounded-2xl'>
       <h1 className='text-6xl font-bold tracking-wide mb-6'>{formattedTime}</h1>
 
       <section className='flex gap-4'>
-        <Button onClick={handleStartClick}>
+        <Button className='cursor-pointer' onClick={handleStartClick}>
           {startButtonIcon}
           {startButtonLabel}
         </Button>
@@ -88,6 +88,7 @@ export default function Timer({ time }: TimerProps) {
           onClick={handleReset}
           disabled={timeRemaining === time}
           variant='secondary'
+          className='cursor-pointer'
         >
           <Square />
           Reset
