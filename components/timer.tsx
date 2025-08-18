@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Play, Pause, PlayCircle, RotateCcw, Square } from 'lucide-react'
 
 interface TimerProps {
   time: number // in seconds
@@ -51,6 +53,13 @@ export default function Timer({ time }: TimerProps) {
     return 'Resume'
   })()
 
+  const startButtonIcon = (() => {
+    if (isRunning) return <Pause className='mr-2 h-4 w-4' />
+    if (timeRemaining === 0) return <RotateCcw className='mr-2 h-4 w-4' />
+    if (timeRemaining === time) return <Play className='mr-2 h-4 w-4' />
+    return <PlayCircle className='mr-2 h-4 w-4' />
+  })()
+
   const handleStartClick = () => {
     if (timeRemaining === 0) {
       setTimeRemaining(time)
@@ -70,10 +79,19 @@ export default function Timer({ time }: TimerProps) {
       <h1>{formattedTime}</h1>
 
       <section>
-        <button onClick={handleStartClick}>{startButtonLabel}</button>
-        <button onClick={handleReset} disabled={timeRemaining === time}>
+        <Button onClick={handleStartClick}>
+          {startButtonIcon}
+          {startButtonLabel}
+        </Button>
+
+        <Button
+          onClick={handleReset}
+          disabled={timeRemaining === time}
+          variant='secondary'
+        >
+          <Square className='mr-2 h-4 w-4' />
           Reset
-        </button>
+        </Button>
       </section>
     </div>
   )
