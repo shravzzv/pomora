@@ -11,6 +11,8 @@ import {
 import { ModeToggle } from '@/components/mode-toggle'
 import { Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import bmac from '@/public/bmac.png'
 
 export default function Page() {
   return (
@@ -43,7 +45,11 @@ export default function Page() {
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant={'outline'} className='mt-4' title='settings'>
+          <Button
+            variant={'outline'}
+            className='mt-4 cursor-pointer'
+            title='settings'
+          >
             <Settings />
           </Button>
         </DialogTrigger>
@@ -63,6 +69,24 @@ export default function Page() {
           </div>
         </DialogContent>
       </Dialog>
+
+      <div className='mt-4'>
+        <a
+          href='https://buymeacoffee.com/shravzzv'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='group flex items-center gap-2 px-3 py-2 rounded-full text-white bg-yellow-500 shadow-md hover:shadow-lg'
+        >
+          <Image
+            src={bmac}
+            alt='Buy me a coffee'
+            width={24}
+            height={24}
+            className='rounded-full'
+          />
+          <span className='text-sm font-medium'>Buy me a coffee</span>
+        </a>
+      </div>
     </main>
   )
 }
