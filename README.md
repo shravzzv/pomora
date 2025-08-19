@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pomora — Minimal Pomodoro Timer ⏱️🍅
 
-## Getting Started
+![Project screenshot](public/home.png)
+[Project demo](https://pomora.vercel.app/)
 
-First, run the development server:
+## Description
+
+Pomora is a clean, distraction-free Pomodoro timer built with **Next.js** and **Tailwind CSS**. It focuses on the essentials: a smooth timer, quick controls, and a thoughtful dark/light theme—no accounts, no backend, no clutter.
+
+## Features
+
+- **Three focused modes:** Pomodoro (25m), Short Break (5m), Long Break (20m)
+- **Simple controls:** Start / Pause / Resume / Restart + Reset
+- **Smart display:** Shows `hh:mm:ss` only when hours are needed
+- **Keyboard-friendly labels & accessible buttons**
+- **Dark / Light theme** (via settings)
+- **Responsive UI** that looks great on mobile and desktop
+- **Privacy-first:** No backend, no trackers beyond optional Vercel Analytics
+
+## Technologies Used
+
+[![My Skills](https://skillicons.dev/icons?i=nextjs,react,ts,vercel,vscode)](https://skillicons.dev)
+
+## Installation
+
+To install the project, follow these steps:
 
 ```bash
+git clone https://github.com/shravzzv/pomora
+cd pomora
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Pick a mode from the tabs: Pomodoro / Short Break / Long Break.
+2. Hit Start. You can Pause, Resume, or Restart when it hits 00:00.
+3. Reset returns the timer to its initial value for that tab.
+4. Open Settings (gear icon) to toggle Dark/Light theme.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Contribute
 
-## Learn More
+If you'd like to contribute, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository on GitHub.
+2. Clone your fork locally.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/shravzzv/pomora
+   cd pomora
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Create a new branch for your feature or bug fix.
 
-## Deploy on Vercel
+   ```bash
+   git checkout -b feature-or-bug-fix-name
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Make your changes, commit them, and push them to your fork.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   git add .
+   git commit -m "Your commit message here"
+   git push origin feature-or-bug-fix-name
+   ```
+
+5. Open a Pull Request on GitHub, comparing your branch to the original repository's `main` branch.
+
+## Issue Tracker
+
+Find a bug or want to request a new feature? Please let us know by submitting an issue.
+
+- [Issue Tracker](https://github.com/shravzzv/pomora/issues)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
