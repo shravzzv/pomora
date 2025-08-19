@@ -57,7 +57,7 @@ export default function Page() {
             </DialogDescription>
           </DialogHeader>
 
-          <div className='flex items-center gap-4 mt-4'>
+          <div className='flex items-center justify-between gap-4 mt-4'>
             Theme
             <ModeToggle />
           </div>
